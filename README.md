@@ -31,3 +31,12 @@ How to use graphql:
 
 Deployment-Attempting Kubernetes
 Using: https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
+
+export PROJECT_ID="$(gcloud config get-value project -q)"
+docker build -t gcr.io/${webapi-234907}/java:v1 .
+gcloud auth configure-docker
+docker push gcr.io/${webapi-234907}/java:v1
+docker run --rm -p 8080:8080 gcr.io/${webapi-234907}/java:v1
+curl http://localhost:8080
+
+faced issues of file locations & installing docker
