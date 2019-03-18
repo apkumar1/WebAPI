@@ -30,4 +30,4 @@ How to use graphql:
 (Requires use of external GraphQL ide to view the result such as GraphQL Playground)
 
 Deployment-Attempting Kubernetes
-
+Using: https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
