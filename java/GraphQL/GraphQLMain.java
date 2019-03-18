@@ -45,7 +45,7 @@ public class GraphQLMain {
 		    .generate(); 
 		
 		
-		File file = new File ("C:/Users/apkum/OneDrive/Documents/Ecli/output.txt");
+		File file = new File ("C:/Users/public/output.txt");
 	    PrintWriter output;
 		try {
 			output = new PrintWriter ("output.txt");
