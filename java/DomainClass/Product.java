@@ -1,5 +1,7 @@
 package DomainClass;
 
+import io.leangen.graphql.annotations.GraphQLQuery;
+
 public class Product {
 	
 	//this class defines a product that is in a shop
@@ -7,10 +9,19 @@ public class Product {
 	
 	// variables, constructors and getters are used to initialize and help set data for example
 	
+	@GraphQLQuery(name="name")
 	private String name;
+	
+	@GraphQLQuery(name="lineitems")
 	private LineItem[] lineitems;
+	
+	@GraphQLQuery(name="id")
 	private Integer id;
+	
+	@GraphQLQuery(name="price")
 	private Double price;
+	
+	@GraphQLQuery(name="shop")
 	private Shop shop;
 	
 	public Product(String name, Integer id, Shop shop, Double price, LineItem[] lineitems) {
@@ -21,22 +32,27 @@ public class Product {
 		this.lineitems = lineitems;
 	}
 	
+	@GraphQLQuery(name="shop")
 	public Shop getShop() {
 		return shop;
 	}
-	
+
+	@GraphQLQuery(name="id")
 	public Integer getProductID() {
 		return id;
 	}
 	
+	@GraphQLQuery(name="name")
 	public String getProduct() {
 		return name;
 	}
 	
+	@GraphQLQuery(name="price")
 	public Double getPrice() {
 		return price;
 	}
 	
+	@GraphQLQuery(name="lineitems")
 	public LineItem[] getLineItems() {
 		return lineitems;
 	}

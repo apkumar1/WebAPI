@@ -1,8 +1,12 @@
 package ServiceClass;
 
-import DomainClass.AllData;
-import DomainClass.LineItem;
+import org.springframework.stereotype.Service;
 
+import DomainClass.AllData;
+import io.leangen.graphql.annotations.GraphQLQuery;
+import io.leangen.graphql.annotations.GraphQLArgument;
+import DomainClass.LineItem;
+@Service
 public class LineItemService {
 	
 	//this is an example service class for the class LineItem
@@ -10,7 +14,8 @@ public class LineItemService {
 
 AllData alldata = new AllData();
 	
-	public LineItem getByID(Integer id) {
+	@GraphQLQuery(name="getLineItemByID")
+	public LineItem getByID(@GraphQLArgument(name="id") Integer id) {
 		return alldata.getLineItemByID(id);
 	}
 }
